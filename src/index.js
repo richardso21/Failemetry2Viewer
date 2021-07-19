@@ -139,7 +139,8 @@ function main() {
             DOMSelectors.aArr.value,
             DOMSelectors.aMot.value,
             DOMSelectors.vBatt.value,
-            currentImg().tickle
+            Date.now()
+            // currentImg().tickle
         );
         clearInputs();
         // shift to next image
@@ -148,7 +149,8 @@ function main() {
 
     // event listener for skipping one image
     DOMSelectors.skip.onclick = () => {
-        if (confirm("Really Skip This Image?")) nextImg();
+        // if (confirm("Really Skip This Image?")) nextImg();
+        nextImg();
     };
 
     // event listener for skipping all images
@@ -168,5 +170,9 @@ function main() {
         // delete data once listened
         tickle.remove();
     });
+
+    window.onbeforeunload = () => {
+        return "Jake sit down and keep doing data entry >:)"
+    }
 }
 main();
